@@ -47,23 +47,14 @@ const CustomTab = <T extends GenericType>({
     return <p>Error loading {queryKey}</p>;
   }
 
-  return (
-    <Wrap w={"full"} style={{ border: "1px solid red" }}>
-      {mapData(data, type)}
-    </Wrap>
-  );
+  return <Wrap>{mapData(data, type)}</Wrap>;
 };
 
 const mapData = <T extends GenericType>(data: T, type: StarWarsType) => {
   switch (type) {
     case StarWarsType.People: {
       return (data as People).map((v, i) => (
-        <Card
-          key={i}
-          w={["full", 400, 300]}
-          marginBottom={5}
-          marginRight={[0, 0, 2, 2]}
-        >
+        <Card w={250} key={i} marginBottom={5}>
           <CardHeader>
             <Heading>{v.name}</Heading>
           </CardHeader>

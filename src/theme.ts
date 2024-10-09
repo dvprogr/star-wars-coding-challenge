@@ -4,6 +4,12 @@ import { mode } from "@chakra-ui/theme-tools";
 
 // Define custom colors, fonts, and styles
 const theme = extendTheme({
+  breakpoints: {
+    sm: "30em",
+    md: "48em",
+    lg: "62em",
+    xl: "80em",
+  },
   colors: {
     brand: {
       900: "#0d0d0d", // Deep space black
@@ -99,7 +105,21 @@ const theme = extendTheme({
         }),
       },
     },
-    Card: {},
+    Card: {
+      sizes: {
+        // Set responsive widths using Chakra's responsive syntax
+        responsive: {
+          w: { base: "100%", sm: "80%", md: "60%", lg: "50%", xl: "40%" },
+        },
+        // Other custom sizes
+        md: {
+          w: "400px",
+        },
+        lg: {
+          w: "600px",
+        },
+      },
+    },
   },
 });
 
