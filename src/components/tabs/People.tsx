@@ -48,7 +48,7 @@ const People = ({ filmApi }: { filmApi: string | undefined }) => {
             <CardBody>
               <Heading size="sm">Characteristics</Heading>
               <Text>Height: {f.height}</Text>
-              <Text>Hair color:{f.hair_color}</Text>
+              <Text>Hair color: {f.hair_color}</Text>
               <Text>Eye color: {f.eye_color}</Text>
               <Text>Birth year: {f.birth_year}</Text>
               <Text>Mass: {f.mass}</Text>

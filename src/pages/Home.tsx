@@ -2,8 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import { getApiFunctions } from "../api/api";
 import { useMemo } from "react";
 import { ApiFunctions } from "../types";
-import { Container, Heading } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import CustomTabs from "../components/CustomTabs";
+import PageWrapper from "../components/PageWrapper";
 
 const Home = () => {
   const apiQuery = useQuery({ queryKey: ["api"], queryFn: getApiFunctions });
@@ -20,10 +21,12 @@ const Home = () => {
   }
 
   return (
-    <Container maxW={{ base: "100%", md: "90%", lg: "60%" }} p={2}>
-      <Heading size="lg">Star Wars</Heading>
+    <PageWrapper>
+      <Heading size="lg" paddingY={4} textAlign="center">
+        Star Wars
+      </Heading>
       <CustomTabs data={data} />
-    </Container>
+    </PageWrapper>
   );
 };
 
