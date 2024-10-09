@@ -3,7 +3,7 @@ import { getApiFunctions } from "../api/api";
 import { useMemo } from "react";
 import { ApiFunctions } from "../types";
 import { Heading } from "@chakra-ui/react";
-import CustomTabs from "../components/CustomTabs";
+import CustomTabs from "../components/tabs/CustomTabs";
 import PageWrapper from "../components/PageWrapper";
 
 const Home = () => {

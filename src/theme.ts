@@ -99,6 +99,7 @@ const theme = extendTheme({
         }),
       },
     },
+    Card: {},
   },
 });
 
