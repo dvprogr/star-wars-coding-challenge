@@ -37,26 +37,23 @@ const People = ({ filmApi }: { filmApi: string | undefined }) => {
   }
 
   return (
-    <>
-      <Heading size="lg">People</Heading>
-      <Wrap>
-        {data.map((f, i) => (
-          <Card key={i} w={250} marginBottom={5} marginRight={2}>
-            <CardHeader>
-              <Heading size="md">{f.name}</Heading>
-            </CardHeader>
-            <CardBody>
-              <Heading size="sm">Characteristics</Heading>
-              <Text>Height: {f.height}</Text>
-              <Text>Hair color: {f.hair_color}</Text>
-              <Text>Eye color: {f.eye_color}</Text>
-              <Text>Birth year: {f.birth_year}</Text>
-              <Text>Mass: {f.mass}</Text>
-            </CardBody>
-          </Card>
-        ))}
-      </Wrap>
-    </>
+    <Wrap>
+      {data.map((f, i) => (
+        <Card key={i} w={250} marginBottom={5} marginRight={2}>
+          <CardHeader>
+            <Heading size="md">{f.name}</Heading>
+          </CardHeader>
+          <CardBody>
+            <Heading size="sm">Characteristics</Heading>
+            <Text>Height: {f.height}</Text>
+            <Text>Hair color: {f.hair_color}</Text>
+            <Text>Eye color: {f.eye_color}</Text>
+            <Text>Birth year: {f.birth_year}</Text>
+            <Text>Mass: {f.mass}</Text>
+          </CardBody>
+        </Card>
+      ))}
+    </Wrap>
   );
 };
 

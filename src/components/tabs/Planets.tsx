@@ -37,26 +37,23 @@ const Planets = ({ filmApi }: { filmApi: string | undefined }) => {
   }
 
   return (
-    <>
-      <Heading size="lg">Planets</Heading>
-      <Wrap>
-        {data.map((f, i) => (
-          <Card key={i} w={250} marginBottom={5} marginRight={2}>
-            <CardHeader>
-              <Heading size="md">{f.name}</Heading>
-            </CardHeader>
-            <CardBody>
-              <Heading size="sm">Planet stats</Heading>
-              <Text>Climate: {f.climate}</Text>
-              <Text>Diameter:{f.diameter}</Text>
-              <Text>Gravity: {f.gravity}</Text>
-              <Text>Population: {f.population}</Text>
-              <Text>Terrain: {f.terrain}</Text>
-            </CardBody>
-          </Card>
-        ))}
-      </Wrap>
-    </>
+    <Wrap>
+      {data.map((f, i) => (
+        <Card key={i} w={250} marginBottom={5} marginRight={2}>
+          <CardHeader>
+            <Heading size="md">{f.name}</Heading>
+          </CardHeader>
+          <CardBody>
+            <Heading size="sm">Planet stats</Heading>
+            <Text>Climate: {f.climate}</Text>
+            <Text>Diameter:{f.diameter}</Text>
+            <Text>Gravity: {f.gravity}</Text>
+            <Text>Population: {f.population}</Text>
+            <Text>Terrain: {f.terrain}</Text>
+          </CardBody>
+        </Card>
+      ))}
+    </Wrap>
   );
 };
 

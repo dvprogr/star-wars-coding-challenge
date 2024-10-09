@@ -40,23 +40,20 @@ const Films = ({ filmApi }: { filmApi: string | undefined }) => {
   }
 
   return (
-    <>
-      <Heading size="lg">Films</Heading>
-      <Wrap>
-        {data.map((f, i) => (
-          <Card key={i} w={250} marginBottom={5} marginRight={2}>
-            <CardHeader>
-              <Heading size="md">{f.title}</Heading>
-            </CardHeader>
-            <CardBody>
-              <Badge>release date: {f.release_date}</Badge>
-              <Text>{f.opening_crawl.substring(0, 50) + "..."}</Text>
-            </CardBody>
-            <CardFooter>Producer: {f.producer}</CardFooter>
-          </Card>
-        ))}
-      </Wrap>
-    </>
+    <Wrap>
+      {data.map((f, i) => (
+        <Card key={i} w={250} marginBottom={5} marginRight={2}>
+          <CardHeader>
+            <Heading size="md">{f.title}</Heading>
+          </CardHeader>
+          <CardBody>
+            <Badge>release date: {f.release_date}</Badge>
+            <Text>{f.opening_crawl.substring(0, 50) + "..."}</Text>
+          </CardBody>
+          <CardFooter>Producer: {f.producer}</CardFooter>
+        </Card>
+      ))}
+    </Wrap>
   );
 };
 

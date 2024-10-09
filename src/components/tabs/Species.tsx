@@ -37,26 +37,23 @@ const Species = ({ filmApi }: { filmApi: string | undefined }) => {
   }
 
   return (
-    <>
-      <Heading size="lg">Species</Heading>
-      <Wrap>
-        {data.map((f, i) => (
-          <Card key={i} w={250} marginBottom={5} marginRight={2}>
-            <CardHeader>
-              <Heading size="md">{f.name}</Heading>
-            </CardHeader>
-            <CardBody>
-              <Heading size="sm">Info</Heading>
-              <Text>Hair colors: {f.hair_colors}</Text>
-              <Text>Eye colors:{f.eye_colors}</Text>
-              <Text>Classification: {f.classification}</Text>
-              <Text>Average height: {f.average_height}</Text>
-              <Text>Average lifespan: {f.average_lifespan}</Text>
-            </CardBody>
-          </Card>
-        ))}
-      </Wrap>
-    </>
+    <Wrap>
+      {data.map((f, i) => (
+        <Card key={i} w={250} marginBottom={5} marginRight={2}>
+          <CardHeader>
+            <Heading size="md">{f.name}</Heading>
+          </CardHeader>
+          <CardBody>
+            <Heading size="sm">Info</Heading>
+            <Text>Hair colors: {f.hair_colors}</Text>
+            <Text>Eye colors:{f.eye_colors}</Text>
+            <Text>Classification: {f.classification}</Text>
+            <Text>Average height: {f.average_height}</Text>
+            <Text>Average lifespan: {f.average_lifespan}</Text>
+          </CardBody>
+        </Card>
+      ))}
+    </Wrap>
   );
 };
 

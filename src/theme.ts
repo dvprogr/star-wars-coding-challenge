@@ -1,5 +1,6 @@
 // theme.js
 import { extendTheme } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
 
 // Define custom colors, fonts, and styles
 const theme = extendTheme({
@@ -68,6 +69,34 @@ const theme = extendTheme({
             bg: "yellow.600",
           },
         },
+      },
+    },
+    Tabs: {
+      baseStyle: (props: Record<string, unknown>) => ({
+        tab: {
+          _selected: {
+            color: "white", // color for selected tab in light/dark mode
+            borderBottomColor: mode("white.500", "white.500")(props), // active tab underline color
+          },
+          _hover: {},
+          fontWeight: "bold", // Customize font weight
+        },
+        tablist: {
+          borderBottomColor: "none", // Border color in light/dark mode
+        },
+      }),
+      variants: {
+        solidRounded: (props: Record<string, unknown>) => ({
+          tab: {
+            bg: mode("gray.200", "gray.700")(props),
+            color: mode("gray.600", "whiteAlpha.900")(props),
+            borderRadius: "md",
+            _selected: {
+              bg: mode("blue.500", "blue.300")(props),
+              color: "white",
+            },
+          },
+        }),
       },
     },
   },

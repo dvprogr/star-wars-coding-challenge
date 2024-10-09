@@ -10,7 +10,7 @@ import { ApiFunctions } from "../types";
 const CustomTabs = ({ data }: { data: ApiFunctions }) => {
   return (
     <Tabs>
-      <TabList>
+      <TabList marginBottom={2}>
         <Tab>Films</Tab>
         <Tab>People</Tab>
         <Tab>Planets</Tab>
