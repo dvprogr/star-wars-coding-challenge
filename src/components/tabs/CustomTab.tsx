@@ -20,6 +20,7 @@ import {
   StarWarsType,
   Vehicles,
 } from "../../types";
+import { ErrorBoundary } from "react-error-boundary";
 
 type GenericType = People | Vehicles | Planets | Films | Species | Starships;
 
@@ -47,7 +48,17 @@ const CustomTab = <T extends GenericType>({
     return <p>Error loading {queryKey}</p>;
   }
 
-  return <Wrap>{mapData(data, type)}</Wrap>;
+  if (apiQuery.isFetched && data.length === 0) {
+    return <p>No data available</p>;
+  }
+
+  return (
+    <ErrorBoundary
+      fallbackRender={() => <p>Data not available at the moment.</p>}
+    >
+      <Wrap>{mapData(data, type)}</Wrap>
+    </ErrorBoundary>
+  );
 };
 
 const mapData = <T extends GenericType>(data: T, type: StarWarsType) => {

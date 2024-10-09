@@ -9,6 +9,7 @@ import PageWrapper from "../components/PageWrapper";
 const Home = () => {
   const apiQuery = useQuery({ queryKey: ["api"], queryFn: getApiFunctions });
 
+  // get all API endpoints
   const data: ApiFunctions = useMemo(() => {
     if (apiQuery.isSuccess && apiQuery.data?.data) {
       return apiQuery.data.data;
